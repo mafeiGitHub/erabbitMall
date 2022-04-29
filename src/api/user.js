@@ -91,3 +91,12 @@ export const userQQPatchCode = (mobile) => {
 export const userQQPatchLogin = ({ unionId, mobile, code, account, password }) => {
   return request(`/login/social/${unionId}/complement`, 'post', { unionId, mobile, code, account, password })
 }
+/*
+* 发送手机验证码 */
+export const userMobileRegisterCode = (mobile) => {
+  return request('/register/code', 'get', { mobile })
+}
+/* 发送验证码时候可以注册 */
+export const userRegister = ({ account, mobile, code, password }) => {
+  return request('/register', 'post', { account, mobile, code, password })
+}
